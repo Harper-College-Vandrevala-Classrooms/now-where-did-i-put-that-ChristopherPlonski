@@ -8,7 +8,11 @@ using namespace std;
 /// </summary>
 int StringFinder::find_in_string(const string baseString, const char charToFindInString)
 {
-	for (int i = 0; i < baseString.length(); i++) {
+	const int BASE_STRING_LENGTH = baseString.length();
+
+	cout << "Starting check of baseString: " << baseString << " with length: " << BASE_STRING_LENGTH << " with charToFindInString: " << charToFindInString << endl;
+
+	for (int i = 0; i < BASE_STRING_LENGTH; i++) {
 		char charAtIndex = baseString[i];
 
 		cout << "Checking char: " << charAtIndex << endl;

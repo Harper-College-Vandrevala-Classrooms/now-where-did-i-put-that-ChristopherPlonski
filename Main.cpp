@@ -27,6 +27,7 @@ void tests() {
 	assert(stringFinder.find_in_string("Computers", "Computers") == 0);
 	assert(stringFinder.find_in_string("Computers", "omputers") == 1);
 	assert(stringFinder.find_in_string("Hello World!", "!") == 11);
+	assert(stringFinder.find_in_string("Hello World!", '!') == 11);
 	assert(stringFinder.find_in_string("Hello World!", "aekgewjgegpoj32j4g23o4gjo23gjg5525442h") == -1);
 	assert(stringFinder.find_in_string("Hello World!", "Hello World! ") == -1);
 	assert(stringFinder.find_in_string("Hello World!", " Hello World!") == -1);
