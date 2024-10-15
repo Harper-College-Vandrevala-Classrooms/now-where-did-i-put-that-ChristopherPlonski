@@ -6,13 +6,13 @@ using namespace std;
 /// <summary>
 /// Attempts to find the character in the string. Returns the index of the character if it is found, and -1 if otherwise. 
 /// </summary>
-int StringFinder::find_in_string(const string baseString, const char charToFindInString)
+int StringFinder::find_in_string(const string baseString, const char charToFindInString, int startingPosition)
 {
 	const int BASE_STRING_LENGTH = baseString.length();
 
 	cout << "Starting check of baseString: " << baseString << " with length: " << BASE_STRING_LENGTH << " with charToFindInString: " << charToFindInString << endl;
 
-	for (int i = 0; i < BASE_STRING_LENGTH; i++) {
+	for (int i = startingPosition; i < BASE_STRING_LENGTH; i++) {
 		char charAtIndex = baseString[i];
 
 		cout << "Checking char: " << charAtIndex << endl;
@@ -26,7 +26,7 @@ int StringFinder::find_in_string(const string baseString, const char charToFindI
 	return -1;
 }
 
-int StringFinder::find_in_string(const string baseString, const string stringToFindInString)
+int StringFinder::find_in_string(const string baseString, const string stringToFindInString, int startingPosition)
 {
 	// "bobby" -> find "by." Checks 0 (b), 1 (o), 2(b), and 3(b). No need to go past this, so check string.length - stringToFindInString.length + 1
 	// Notes: EMPTY string "" should return index 0 as string.find() method does.
@@ -39,7 +39,7 @@ int StringFinder::find_in_string(const string baseString, const string stringToF
 	const int STRING_TO_FIND_IN_STRING_LENGTH = stringToFindInString.length();
 	
 	cout << "Starting check of baseString: " << baseString << " with length: " << BASE_STRING_LENGTH << " with stringToFind: " << stringToFindInString << " with length: " << STRING_TO_FIND_IN_STRING_LENGTH << endl;
-	for (int i = 0; i < BASE_STRING_LENGTH - STRING_TO_FIND_IN_STRING_LENGTH + 1; i++) {
+	for (int i = startingPosition; i < BASE_STRING_LENGTH - STRING_TO_FIND_IN_STRING_LENGTH + 1; i++) {
 		char charAtIndex = baseString[i];
 
 		cout << "Checking char: '" << charAtIndex << "' at index: " << i << endl;

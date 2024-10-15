@@ -32,6 +32,28 @@ void tests() {
 	assert(stringFinder.find_in_string("Hello World!", "Hello World! ") == -1);
 	assert(stringFinder.find_in_string("Hello World!", " Hello World!") == -1);
 
+	// Tests for Add-on #2 (starting position)
+	assert(stringFinder.find_in_string("The quick brown fox", 'e', 0) == 2);
+	assert(stringFinder.find_in_string("The quick brown fox", 'E', 0) == -1);
+	assert(stringFinder.find_in_string("The quick brown fox", 'e', 1) == 2);
+	assert(stringFinder.find_in_string("The quick brown fox", 'e', 2) == 2);
+	assert(stringFinder.find_in_string("The quick brown fox", 'e', 3) == -1);
+	assert(stringFinder.find_in_string("The", 'e', 100) == -1);
+	assert(stringFinder.find_in_string("The", 'b', 101) == -1);
+	assert(stringFinder.find_in_string("e", 'e', 100) == -1);
+	assert(stringFinder.find_in_string("e", 'b', 101) == -1);
+	assert(stringFinder.find_in_string("The quick brown fox", "quick", 0) == 4);
+	assert(stringFinder.find_in_string("The quick brown fox", "QUICK", 0) == -1);
+	assert(stringFinder.find_in_string("The quick brown fox", "quick", 1) == 4);
+	assert(stringFinder.find_in_string("The quick brown fox", "quick", 2) == 4);
+	assert(stringFinder.find_in_string("The quick brown fox", "quick", 3) == 4);
+	assert(stringFinder.find_in_string("The quick brown fox", "quick", 4) == 4);
+	assert(stringFinder.find_in_string("The quick brown fox", "quick", 5) == -1);
+	assert(stringFinder.find_in_string("The", "quick", 100) == -1);
+	assert(stringFinder.find_in_string("The", "quick", 101) == -1);
+	assert(stringFinder.find_in_string("QUICK", "the", 101) == -1);
+	assert(stringFinder.find_in_string("QUICK", "the", 101) == -1);
+
 	cout << "-- Tests successfully completed!" << endl;
 }
 
